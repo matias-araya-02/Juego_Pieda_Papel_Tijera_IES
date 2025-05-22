@@ -15,13 +15,11 @@ public class Main {
 
         for (int i = 0; i < 3 ; i++) {
             do {
-                System.out.println("RONDA " +(i+1));
-                System.out.println("\nIngrese que desea jugar: ");
-                System.out.println("1. Piedra");
-                System.out.println("2. Papel");
-                System.out.println("3. Tijera");
-                System.out.print("Opcion --> ");
-                opcion = new Scanner(System.in).nextInt();
+                System.out.println("\n ---- RONDA " +(i+1)+" ---- ");
+                
+                String mensaje = "Ingrese que desea jugar:\n1. Piedra\n2. Papel\n3. Tijera";
+                String opcionStr = JOptionPane.showInputDialog(null, mensaje, "Piedra, Papel o Tijera", JOptionPane.QUESTION_MESSAGE);
+                opcion = Integer.parseInt(opcionStr);
 
                 if (opcion == 1 || opcion == 2 || opcion == 3) {
                     salir = true;
@@ -31,8 +29,14 @@ public class Main {
                 }
             }while(!salir);
 
+            if (opcion == 1) {
+                System.out.println("Tiraste PIEDRA");
+            } else if (opcion == 2) {
+                System.out.println("Tiraste PAPEL");
+            }else {
+                System.out.println("TIRASTE TIJERA");
+            }
 
-            System.out.println();
             num_aleatorio = (Math.random()*3) + 1;
             int num_alea_int = (int)num_aleatorio;
 
