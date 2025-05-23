@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(" --- PIEDRA, PEL O TIJERA --- ");
+        System.out.println(" --- PIEDRA, PAPEL O TIJERA --- ");
 
         int cont_win= 0, cont_lose = 0;
         int opcion;
@@ -17,7 +17,7 @@ public class Main {
             do {
                 System.out.println("\n ---- RONDA " +(i+1)+" ---- ");
                 
-                String mensaje = "Ingrese que desea jugar:\n1. Piedra\n2. Papel\n3. Tijera";
+                String mensaje = " ------------- RONDA "+(i+1)+" ------------- "+"\nIngrese que desea jugar:\n1. Piedra\n2. Papel\n3. Tijera";
                 String opcionStr = JOptionPane.showInputDialog(null, mensaje, "Piedra, Papel o Tijera", JOptionPane.QUESTION_MESSAGE);
                 opcion = Integer.parseInt(opcionStr);
 
@@ -86,8 +86,10 @@ public class Main {
         }
 
         if (cont_win > cont_lose) {
-            System.out.println("LE GANASTE A LA PC PAPAAAA!!");
-        }else {
+            System.out.println("LE GANASTE A LA PC PAPAAAA ;) !!");
+        }else if (cont_win ==  cont_lose){
+            System.out.println("CASI CHE :/");
+        } else {
             System.out.println("SOS ALTO MUERTO JSAJSA");
         }
 
